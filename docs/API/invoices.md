@@ -1,6 +1,14 @@
+# Send invoices
+
 *Documentation in progress*
 
-# Post new invoices
+
+|URL|/api/invoices|
+|---|---|
+|method|POST|
 
 
+__Parameters__
 
+|Name|Type|Format|Required|Values|Default|Description|Comment|
+|---|---|---|---|---|---|---|---|
