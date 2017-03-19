@@ -3,28 +3,67 @@
 *Documentation in progress*
 
 
-### Call
+__Resource__
 
-|URL|/api/invoices|
+|URL|`/api/invoices`|
 |:---|---|
 |Method|POST|
 
-### Response
+__ Request payload example __
 
-#### On Success
 
-|Http status code|Content|Description|
-|:---|---|---|
-|201||
+```
+{
+	"app_invoice_id": "1234",
+	"sender": {
 
-#### On Error
+	},
+	"receiver": {
 
-|Http status code|Content|Description|
-|:---|---|---|
-|401||
+	},
+	"receiver_type": "professional",
+	"reference": "INV201701010004",
+	"issue_date": "2017-01-01",
+	"invoice_type_code": "S",
+	"currency_code": "EUR",
+	"total": 100,
+	"taxes": 5.5,
+	"total_due": 105.5,
+	"terms": {
+		"due_date": "2017-02-01"
+	},
+	"lines": [
+		{
+			"total": 100,
+			"taxes": 5.5,
+			"total_due": 105.5,
+			"items": [
+				{
+					"lot_id": "ABCDE12345",
+					"description": "Beef steak",
+					"quantity": 12.5,
+					"unit": "kg",
+					"unit_price": 4,
+					"total": 50,
+					"taxes": 2.75,
+					"total_due": 52.75
+				},
+				{
+					"lot_id": "FGHIJ67890",
+					"description": "Pork steak",
+					"quantity": 10,
+					"unit": "kg",
+					"unit_price": 5,
+					"total": 50,
+					"taxes": 2.75,
+					"total_due": 52.75
+				}
 
-__ Request payload __
-
+			]
+		}
+	]
+}
+```
 
 ---
 
@@ -32,41 +71,112 @@ __Parameters__
 
 *All parameters prefixed with `app_` refer to the third party application data.*
 
-__Required params__
-
 __Invoice__
 
-- `app_invoice_id`: Invoice identifier of the third party application.
-- `sender`: type COMPANY
-- `receiver`: type CONTACT|COMPANY
-- `receiver_type`: 'professional' | 'institutional' | 'individual'
-- `reference`: Reference of the invoice.
-- `issue_date`: 
-- `invoice_type_code`:
-- `currency_code`
-- `total`: Total amount before taxes
-- `total_due`: Total amount including taxes
-- `taxes`: Taxes amount
-- `lines`: Invoice lines
+- __`app_invoice_id`__ *required*
+*Invoice identifier of the third party application.*
+type: string
+format: alphanumeric
+
+- __`sender`__ *required*
+*Sender of the invoice*
+type: `Company`
+
+- __`receiver`__ *required*
+type: `Contact`|`Company`
+
+- __`receiver_type`__ *required*
+type: string
+format: `'professional'` | `'institutional'` | `'individual'`
+
+- __`reference`__ *required*
+type: string
+format: alphanumeric
+Invoice reference number.
+
+- __`issue_date`__ *required*
+type: string
+format: date
+
+- __`invoice_type_code`__ *required*
+*Type of the invoice*
+type: char
+format: `'S'` (standard) | `'C'` (credit note)
+
+- __`currency_code`__ *required*
+*Currency used in invoice format*
+type: string
+format: [ISO 4217](https://www.iso.org/iso-4217-currency-codes.html) 
+
+- __`total`__ *required*
+*Total amount of the invoice before taxes*
+type: decimal
+
+- __`taxes`__ *required*
+*Taxes amount of the invoice*
+type: decimal
+
+- __`total_due`__ *required*
+*Total amount of the invoice including taxes*
+type: decimal
+
 - `terms`: {due_date}
-- TODO: add compta
+
+- __`lines`__ *required*
+*Invoice lines*
+type: `InvoiceLine`
+
 
 __Invoice Line__
 
-- `total`: total HT
-- `taxes`
+- __`total`__ *required*
+*Total amount of the invoice line before taxes*
+type: decimal
+
+- __`taxes`__ *required*
+*Taxes amount of the invoice line*
+type: decimal
+
+- __`total_due`__ *required*
+*Total amount of the invoice line including taxes*
+type: decimal
+
 - `items`
 
 __Invoice Line Item__
 
-- `lot_id`
-- `description`
-- `quantity`
-- `unit_price`
-- `unit`
-- `total`
-- `taxes`
-- `accounting_entries`
+- __`lot_id`__ *optional*
+*Item's lot identification number*
+type: string
+format: alphanumeric
+
+- __`description`__ *required*
+type: string
+format: alphanumeric
+
+- __`quantity`__ *optional*
+type: decimal
+
+- __`unit`__ *optional*
+type: string
+format: alphanumeric
+
+- __`unit_price`__ *optional*
+type: decimal
+
+- __`total`__ *required*
+*Total amount of the invoice line item before taxes*
+type: decimal
+
+- __`taxes`__ *required*
+*Taxes amount of the invoice line item*
+type: decimal
+
+- __`total_due`__ *required*
+*Total amount of the invoice line item including taxes*
+type: decimal
+
+- `accounting_entries` *optional*
 
 __Company__
 
