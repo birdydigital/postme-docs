@@ -5,11 +5,11 @@
 
 __Resource__
 
-|URL|`/api/invoices`|
-|:---|---|
-|Method|POST|
+URL: `/api/invoices`
 
-__ Request payload example __
+Method: POST
+
+__Request payload example__
 
 
 ```
@@ -69,7 +69,7 @@ __ Request payload example __
 
 __Parameters__
 
-*All parameters prefixed with `app_` refer to the third party application data.*
+Note: *All parameters prefixed with `app_` refer to the third party application data.*
 
 __Invoice__
 
@@ -88,6 +88,7 @@ __Invoice__
 - __`lines`__ Required. *Invoice lines*. type: `InvoiceLine`.
 
 __Invoice Line__
+
 - __`total`__ Required. *Total amount of the invoice line before taxes*. type: decimal.
 - __`taxes`__ Required. *Taxes amount of the invoice line*. type: decimal.
 - __`total_due`__ Required. *Total amount of the invoice line including taxes*. type: decimal. 
@@ -100,7 +101,7 @@ __Invoice Line Item__
 - __`quantity`__ Optional. type: decimal. 
 - __`unit`__ Optional. type: string. format: alphanumeric
 - __`unit_price`__ Optional. type: decimal. 
-- __`total`__Required. *Total amount of the invoice line item before taxes*. type: decimal.
+- __`total`__ Required. *Total amount of the invoice line item before taxes*. type: decimal.
 - __`taxes`__ Required. *Taxes amount of the invoice line item*. type: decimal. 
 - __`total_due`__ Required. *Total amount of the invoice line item including taxes*. type: decimal. 
 - __`accounting_entries`__ Optional.
