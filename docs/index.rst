@@ -21,3 +21,4 @@ Getting started
 Object Types
 ============
 
+* :ref:`object-types`
