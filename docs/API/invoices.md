@@ -73,71 +73,101 @@ __Parameters__
 
 __Invoice__
 
-- __`app_invoice_id`__ *required*
+- __`app_invoice_id`__ 
+
+Required.
 *Invoice identifier of the third party application.*
 type: string
 format: alphanumeric
 
-- __`sender`__ *required*
+- __`sender`__
+
+Required
 *Sender of the invoice*
 type: `Company`
 
-- __`receiver`__ *required*
+- __`receiver`__
+
+Required
 type: `Contact`|`Company`
 
-- __`receiver_type`__ *required*
+- __`receiver_type`__
+
+Required
 type: string
 format: `'professional'` | `'institutional'` | `'individual'`
 
-- __`reference`__ *required*
+- __`reference`__
+
+Required
 type: string
 format: alphanumeric
 Invoice reference number.
 
-- __`issue_date`__ *required*
+- __`issue_date`__
+
+Required
 type: string
 format: date
 
-- __`invoice_type_code`__ *required*
+- __`invoice_type_code`__
+
+Required
 *Type of the invoice*
 type: char
 format: `'S'` (standard) | `'C'` (credit note)
 
-- __`currency_code`__ *required*
+- __`currency_code`__
+
+Required
 *Currency used in invoice format*
 type: string
 format: [ISO 4217](https://www.iso.org/iso-4217-currency-codes.html) 
 
-- __`total`__ *required*
+- __`total`__
+
+Required
 *Total amount of the invoice before taxes*
 type: decimal
 
-- __`taxes`__ *required*
+- __`taxes`__
+
+Required
 *Taxes amount of the invoice*
 type: decimal
 
-- __`total_due`__ *required*
+- __`total_due`__
+
+Required
 *Total amount of the invoice including taxes*
 type: decimal
 
 - `terms`: {due_date}
 
-- __`lines`__ *required*
+- __`lines`__
+
+Required
 *Invoice lines*
 type: `InvoiceLine`
 
 
 __Invoice Line__
 
-- __`total`__ *required*
+- __`total`__
+
+Required
 *Total amount of the invoice line before taxes*
 type: decimal
 
-- __`taxes`__ *required*
+- __`taxes`__
+
+Required
 *Taxes amount of the invoice line*
 type: decimal
 
-- __`total_due`__ *required*
+- __`total_due`__
+
+Required
 *Total amount of the invoice line including taxes*
 type: decimal
 
@@ -145,34 +175,50 @@ type: decimal
 
 __Invoice Line Item__
 
-- __`lot_id`__ *optional*
+- __`lot_id`__
+
+Optional
 *Item's lot identification number*
 type: string
 format: alphanumeric
 
-- __`description`__ *required*
+- __`description`__
+
+Required
 type: string
 format: alphanumeric
 
-- __`quantity`__ *optional*
+- __`quantity`__
+
+Optional
 type: decimal
 
-- __`unit`__ *optional*
+- __`unit`__
+
+Optional
 type: string
 format: alphanumeric
 
-- __`unit_price`__ *optional*
+- __`unit_price`__
+
+Optional
 type: decimal
 
-- __`total`__ *required*
+- __`total`__
+
+Required
 *Total amount of the invoice line item before taxes*
 type: decimal
 
-- __`taxes`__ *required*
+- __`taxes`__
+
+Required
 *Taxes amount of the invoice line item*
 type: decimal
 
-- __`total_due`__ *required*
+- __`total_due`__
+
+Required
 *Total amount of the invoice line item including taxes*
 type: decimal
 
