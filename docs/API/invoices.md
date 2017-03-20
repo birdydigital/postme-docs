@@ -5,11 +5,12 @@
 
 __Resource__
 
-URL: `/api/invoices`
+|URL|`/api/invoices`|
+|---|---|
+|Method|POST|
+|Headers|Authorization |
 
-Method: POST
-
-__Request payload example__
+__Request JSON payload example__
 
 
 ```
@@ -65,8 +66,6 @@ __Request payload example__
 }
 ```
 
----
-
 __Parameters__
 
 Note: *All parameters prefixed with `app_` refer to the third party application data.*
@@ -80,7 +79,7 @@ __Invoice__
 - __`reference`__ Required. *Invoice reference number.* type: string. format: alphanumeric.
 - __`issue_date`__ Required. type: string. format: date.
 - __`invoice_type_code`__ Required. *Type of the invoice*. type: char. format: `'S'` (standard) | `'C'` (credit note).
-- __`currency_code`__ Required. *Currency used in invoice format*. type: string. format: [ISO 4217](https://www.iso.org/iso-4217-currency-codes.html).
+- __`currency_code`__ Required. *Currency used in invoice format*. type: string. format: 3 digits as defined by [ISO 4217](https://www.iso.org/iso-4217-currency-codes.html).
 - __`total`__ Required. *Total amount of the invoice before taxes*. type: decimal. 
 - __`taxes`__ Required. *Taxes amount of the invoice*. type: decimal.
 - __`total_due`__ Required. *Total amount of the invoice including taxes*. type: decimal.
