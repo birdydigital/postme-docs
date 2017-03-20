@@ -14,7 +14,11 @@ JSON Object example
 
 __Attributes__
 
-- __`country_code`__ : *Country code of the address*. type: string. format: 2 digits As defined by the ISO 3166-1 alpha-2.
+- __`address_1`__ : Required. *Address 1*. type: string. format: alphanumeric, max length: 255 char.
+- __`address_2`__ : Optional. *Address 2*. type: string. format: alphanumeric, max length: 255 char.
+- __`postal_code`__ : Required. *Postal Code*. type: string. format: alphanumeric, max length: 16 char.
+- __`city`__ : Required. *Postal Code*. type: string. format: alphanumeric, max length: 64 char.
+- __`country_code`__ : Required. *Country code of the address*. type: string. format: 2 digits As defined by the ISO 3166-1 alpha-2.
 
 ___
 

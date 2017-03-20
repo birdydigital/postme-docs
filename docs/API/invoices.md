@@ -2,15 +2,83 @@
 
 *Documentation in progress*
 
+Before sending a new invoice, you need to make sure the invoice sender is already registered on postme.io.
 
-__Resource__
+If not, please visit "Register a new company" how-to section.
+
+### Resource
 
 |URL|`/api/invoices`|
 |---|---|
 |Method|POST|
 |Headers|Authorization |
+|JSON Request Body|InvoiceObject|
 
-__Request JSON payload example__
+
+### Parameters
+
+See InvoiceObject section.
+
+Note: *All parameters prefixed with `app_` refer to the third party application data.*
+
+### Response
+
+__On success__
+
+|Http status code|content|description|
+|---|---|---|
+|201||Success|
+
+__On error__
+
+|Http status code|content|description|
+|---|---|---|
+|401||Unauthorized|
+
+
+
+__Invoice__
+
+- __`app_invoice_id`__ Required. *Invoice identifier of the third party application.* type: string. format: alphanumeric.
+- __`sender`__ Required. *Sender of the invoice*. type: `Company`.
+- __`receiver`__ Required. type: `Contact`|`Company`
+- __`receiver_type`__ Required. type: string. format: `'professional'` | `'institutional'` | `'individual'`.
+- __`reference`__ Required. *Invoice reference number.* type: string. format: alphanumeric.
+- __`issue_date`__ Required. type: string. format: date.
+- __`invoice_type_code`__ Required. *Type of the invoice*. type: char. format: `'S'` (standard) | `'C'` (credit note).
+- __`currency_code`__ Required. *Currency used in invoice format*. type: string. format: 3 digits as defined by [ISO 4217](https://www.iso.org/iso-4217-currency-codes.html).
+- __`total`__ Required. *Total amount of the invoice before taxes*. type: decimal. 
+- __`taxes`__ Required. *Taxes amount of the invoice*. type: decimal.
+- __`total_due`__ Required. *Total amount of the invoice including taxes*. type: decimal.
+- __`terms`__: {due_date}
+- __`lines`__ Required. *Invoice lines*. type: `InvoiceLine`.
+
+__Invoice Line__
+
+- __`total`__ Required. *Total amount of the invoice line before taxes*. type: decimal.
+- __`taxes`__ Required. *Taxes amount of the invoice line*. type: decimal.
+- __`total_due`__ Required. *Total amount of the invoice line including taxes*. type: decimal. 
+- __`items`__
+
+__Invoice Line Item__
+
+- __`lot_id`__ Optional. *Item's lot identification number*. type: string. format: alphanumeric
+- __`description`__ Required. type: string. format: alphanumeric. 
+- __`quantity`__ Optional. type: decimal. 
+- __`unit`__ Optional. type: string. format: alphanumeric
+- __`unit_price`__ Optional. type: decimal. 
+- __`total`__ Required. *Total amount of the invoice line item before taxes*. type: decimal.
+- __`taxes`__ Required. *Taxes amount of the invoice line item*. type: decimal. 
+- __`total_due`__ Required. *Total amount of the invoice line item including taxes*. type: decimal. 
+- __`accounting_entries`__ Optional.
+
+__Accounting Entry__
+
+- `account_number`
+- `debit`
+- `credit`
+
+### Request JSON body example
 
 
 ```
@@ -65,62 +133,3 @@ __Request JSON payload example__
 	]
 }
 ```
-
-__Parameters__
-
-Note: *All parameters prefixed with `app_` refer to the third party application data.*
-
-__Invoice__
-
-- __`app_invoice_id`__ Required. *Invoice identifier of the third party application.* type: string. format: alphanumeric.
-- __`sender`__ Required. *Sender of the invoice*. type: `Company`.
-- __`receiver`__ Required. type: `Contact`|`Company`
-- __`receiver_type`__ Required. type: string. format: `'professional'` | `'institutional'` | `'individual'`.
-- __`reference`__ Required. *Invoice reference number.* type: string. format: alphanumeric.
-- __`issue_date`__ Required. type: string. format: date.
-- __`invoice_type_code`__ Required. *Type of the invoice*. type: char. format: `'S'` (standard) | `'C'` (credit note).
-- __`currency_code`__ Required. *Currency used in invoice format*. type: string. format: 3 digits as defined by [ISO 4217](https://www.iso.org/iso-4217-currency-codes.html).
-- __`total`__ Required. *Total amount of the invoice before taxes*. type: decimal. 
-- __`taxes`__ Required. *Taxes amount of the invoice*. type: decimal.
-- __`total_due`__ Required. *Total amount of the invoice including taxes*. type: decimal.
-- __`terms`__: {due_date}
-- __`lines`__ Required. *Invoice lines*. type: `InvoiceLine`.
-
-__Invoice Line__
-
-- __`total`__ Required. *Total amount of the invoice line before taxes*. type: decimal.
-- __`taxes`__ Required. *Taxes amount of the invoice line*. type: decimal.
-- __`total_due`__ Required. *Total amount of the invoice line including taxes*. type: decimal. 
-- __`items`__
-
-__Invoice Line Item__
-
-- __`lot_id`__ Optional. *Item's lot identification number*. type: string. format: alphanumeric
-- __`description`__ Required. type: string. format: alphanumeric. 
-- __`quantity`__ Optional. type: decimal. 
-- __`unit`__ Optional. type: string. format: alphanumeric
-- __`unit_price`__ Optional. type: decimal. 
-- __`total`__ Required. *Total amount of the invoice line item before taxes*. type: decimal.
-- __`taxes`__ Required. *Taxes amount of the invoice line item*. type: decimal. 
-- __`total_due`__ Required. *Total amount of the invoice line item including taxes*. type: decimal. 
-- __`accounting_entries`__ Optional.
-
-__Company__
-- `name`
-- `vat_id`
-- `siret_id`
-- `apet_id`
-- `address`
-- `contacts`
-
-__Contact__
-
-- `name`
-- `telephone`
-- `email`
-
-__Accounting Entry__
-
-- `account_number`
-- `debit`
-- `credit`
