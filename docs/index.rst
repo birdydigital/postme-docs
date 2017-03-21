@@ -10,15 +10,7 @@ postme.io developers documentation
    :maxdepth: 2
    :caption: Contents:
 
-* :ref:`genindex`
-* :ref:`modindex`
-* :ref:`search`
-
-Getting started
-==================
-
-
-Object Types
-============
-
+* :ref:`getting-started`
+* :ref:`invoices`
 * :ref:`object-types`
+* :ref:`search`

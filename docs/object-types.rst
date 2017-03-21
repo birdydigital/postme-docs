@@ -3,6 +3,7 @@
 Object Types
 ============
 
+
 Address
 ----------
 
@@ -39,13 +40,9 @@ Company
 		"name": "My Organization",
 		"vat_id": "FR27654654654",
 		"siren_id": "654654654",
-		"address": {
-			...
-		},
+		"address": {},
 		"phone": "+33401010101",
-		"contacts": [
-			...
-		]
+		"contacts": []
 	}
 
 **Attributes**
@@ -79,6 +76,7 @@ Contact
 - **`email`** : *Email of the contact*. type: string. format: valid email.
 - **`phone`** : *Phone number of the contact*. type: string. format: valid phone number as defined by E.164, the international public telecommunication numbering plan.
 
+.. _object-invoice:
 
 Invoice
 -------
@@ -91,13 +89,9 @@ Invoice
 	{
 		"app_invoice_id": "1234",
 		"sender_type": "professional",
-		"sender": {
-			...
-		},
+		"sender": {},
 		"receiver_type": "professional",
-		"receiver": {
-			...
-		},
+		"receiver": {},
 		"reference": "INV201701010004",
 		"issue_date": "2017-01-01",
 		"invoice_type_code": "S",
@@ -105,15 +99,11 @@ Invoice
 		"total": 100,
 		"taxes": 5.5,
 		"total_due": 105.5,
-		"journal_entries": [
-			...
-		],
+		"journal_entries": [],
 		"terms": {
 			"due_date": "2017-02-01"
 		},
-		"lines": [
-			...
-		]
+		"lines": []
 
 	}
 
@@ -148,9 +138,7 @@ InvoiceLine
 		"total": 100,
 		"taxes": 5.5,
 		"total_due": 105.5,
-		"items": [
-			...
-		]
+		"items": []
 	}
 
 **Attributes**
@@ -178,9 +166,7 @@ InvoiceLineItem
 		"total": 50,
 		"taxes": 2.75,
 		"total_due": 52.75,
-		"journal_entries": [
-			...
-		]
+		"journal_entries": []
 	}
 
 **Attributes**
