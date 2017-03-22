@@ -48,7 +48,7 @@ Company
 **Attributes**
 
 - **`name`** Required. *The name of the company*. type: string. format: alphanumeric.
-- **`vat_id`** Required. *VAT Identification Number of the company*. type: string. format: alphanumeric.
+- **`vat_id`** Optional. *VAT Identification Number of the company*. type: string. format: alphanumeric.
 - **`siren_id`** Required. *SIREN Identification Number of the company (for french companies only)*. type: string. format: numeric.
 - **`address`** Required. *Address of the company*. type: object Address (please refer to the Object Types > Address section).
 - **`phone`** Optional. *Contact phone number of the company*. type: string. format: valid phone number.
