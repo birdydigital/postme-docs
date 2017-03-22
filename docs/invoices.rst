@@ -4,7 +4,7 @@ Invoices
 ========
 
 Send a new invoice
--------------
+------------------
 
 .. http:post:: /api/invoices
 
@@ -14,13 +14,13 @@ Send a new invoice
 
       POST /api/invoices HTTP/1.1
       Host: app.postme.io
-      Accept: application/json, text/javascript
+      Accept: application/json
 
    **Example response**:
 
    .. sourcecode:: http
 
-      HTTP/1.1 201 Created
+      HTTP/1.1 200 Success
       Vary: Accept
       Content-Type: application/json
 
@@ -30,5 +30,6 @@ Send a new invoice
    :reqheader Authorization: Bearer
    :resheader Content-Type: this depends on :mailheader:`Accept`
                             header of request
-   :statuscode 201: no error
+   :statuscode 200: No error
    :statuscode 401: Unauthorized
+   :statuscode 400: Bad request
