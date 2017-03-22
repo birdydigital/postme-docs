@@ -27,7 +27,6 @@ Send a new invoice
    :jsonparam `object-invoice` invoice: the invoice
    :reqheader Accept: the response content type depends on
                       :mailheader:`Accept` header
-   :reqheader Authorization: Bearer
    :resheader Content-Type: this depends on :mailheader:`Accept`
                             header of request
    :statuscode 200: No error
