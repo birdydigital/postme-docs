@@ -88,10 +88,16 @@ Invoice
 
 	{
 		"app_invoice_id": "1234",
-		"sender_type": "professional",
-		"sender": {},
-		"receiver_type": "professional",
-		"receiver": {},
+		"sender": {
+			"type": "professional",
+			"company": { },
+			"contact": { },
+		},
+		"receiver": {
+			"type": "professional",
+			"company": { },
+			"contact": { },
+		},
 		"reference": "INV201701010004",
 		"issue_date": "2017-01-01",
 		"invoice_type_code": "S",
@@ -110,10 +116,14 @@ Invoice
 **Attributes**
 
 - **`app_invoice_id`** Required. *Invoice identifier of the third party application.* type: string. format: alphanumeric.
-- **`sender_type`** Required. type: string. values: `'professional'`.
-- **`sender`** Required. *Sender of the invoice*. type: object Company.
-- **`receiver_type`** Required. type: string. values: `'professional'` | `'institutional'` | `'individual'`.
-- **`receiver`** Required. type: object Contact | object Company.
+- **`sender`** Required. *The sender of the invoice*.
+- **`sender[type]`** Required. type: string. values: `'professional'`.
+- **`sender[company]`** Required. **The company of the sender**. type: object Company.
+- **`sender[contact]`** Optional. type: object Contact.
+- **`receiver`** Required. *The receiver of the invoice*.
+- **`receiver[type]`** Required. type: string. values: `'professional'` | `'institutional'` | `'individual'`.
+- **`receiver[company]`** Required if type is `professional`. *The company of the receiver*. type: object Company.
+- **`receiver[contact]`** Required if type is `individual`. type: object Contact.
 - **`reference`** Required. *Invoice reference number.* type: string. format: alphanumeric.
 - **`issue_date`** Required. type: string. format: date.
 - **`invoice_type_code`** Required. *Type of the invoice*. type: char. value:s `'S'` (standard) | `'C'` (credit note).
