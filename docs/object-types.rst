@@ -3,6 +3,7 @@
 Object Types
 ============
 
+.. _Address:
 
 Address
 ----------
@@ -28,6 +29,7 @@ Address
 - **`city`** : Required. *Postal Code*. type: string. format: alphanumeric, max length: 64 char.
 - **`country_code`** : Required. *Country code of the address*. type: string. format: 2 digits As defined by the ISO 3166-1 alpha-2.
 
+.. _Company:
 
 Company
 -------
@@ -40,6 +42,7 @@ Company
 		"name": "My Organization",
 		"vat_id": "FR27654654654",
 		"siren_id": "654654654",
+		"siret_id": "65465465400045",
 		"address": {},
 		"phone": "+33401010101",
 		"contacts": []
@@ -50,9 +53,12 @@ Company
 - **`name`** Required. *The name of the company*. type: string. format: alphanumeric.
 - **`vat_id`** Optional. *VAT Identification Number of the company*. type: string. format: alphanumeric.
 - **`siren_id`** Required. *SIREN Identification Number of the company (for french companies only)*. type: string. format: numeric.
-- **`address`** Required. *Address of the company*. type: object Address (please refer to the Object Types > Address section).
+- **`siret_id`** Optional. *SIRET Identification Number of the company branch (for french companies only)*. type: string. format: numeric.
+- **`address`** Required. *Address of the company*. type: object Address_.
 - **`phone`** Optional. *Contact phone number of the company*. type: string. format: valid phone number.
-- **`contacts`** Optional. *Contacts of the company*. type: Array(object Contact).
+- **`contacts`** Optional. *Contacts of the company*. type: Array(object Contact_).
+
+.. _Contact:
 
 Contact
 -------
@@ -67,6 +73,7 @@ Contact
 		"lastname": "Doe",
 		"email": "john.doe@company.com",
 		"phone": "+33601010101",
+		"address": { }
 	}
 
 **Attributes**
@@ -75,8 +82,9 @@ Contact
 - **`lastname`** : *Lastname of the contact*. type: string. format: alpha.
 - **`email`** : *Email of the contact*. type: string. format: valid email.
 - **`phone`** : *Phone number of the contact*. type: string. format: valid phone number as defined by E.164, the international public telecommunication numbering plan.
+- **`address`** Optional. *Address of the contact*. type: object Address_.
 
-.. _object-invoice:
+.. _Invoice:
 
 Invoice
 -------
@@ -94,10 +102,12 @@ Invoice
 			"contact": { },
 		},
 		"receiver": {
+			"app_receiver_id": "MYCUSTOMER-45",
 			"type": "professional",
 			"company": { },
 			"contact": { },
 		},
+		"delivery_address": { },
 		"reference": "INV201701010004",
 		"issue_date": "2017-01-01",
 		"invoice_type_code": "S",
@@ -105,12 +115,11 @@ Invoice
 		"total": 100,
 		"taxes": 5.5,
 		"total_due": 105.5,
-		"journal_entries": [],
 		"terms": {
 			"due_date": "2017-02-01"
 		},
-		"lines": []
-
+		"lines": [],
+		"journal_entries": []
 	}
 
 **Attributes**
@@ -118,12 +127,14 @@ Invoice
 - **`app_invoice_id`** Required. *Invoice identifier of the third party application.* type: string. format: alphanumeric.
 - **`sender`** Required. *The sender of the invoice*.
 - **`sender[type]`** Required. type: string. values: `'professional'`.
-- **`sender[company]`** Required. **The company of the sender**. type: object Company.
-- **`sender[contact]`** Optional. type: object Contact.
+- **`sender[company]`** Required. *The company of the sender*. type: object Company_.
+- **`sender[contact]`** Optional. type: object Contact_.
 - **`receiver`** Required. *The receiver of the invoice*.
+- **`receiver[app_receiver_id]`** Required. *Receiver identifier of the third party application.* type: string. format: alphanumeric.
 - **`receiver[type]`** Required. type: string. values: `'professional'` | `'institutional'` | `'individual'`.
-- **`receiver[company]`** Required if type is `professional`. *The company of the receiver*. type: object Company.
-- **`receiver[contact]`** Required if type is `individual`. type: object Contact.
+- **`receiver[company]`** Required if type is `professional`. *The company of the receiver*. type: object Company_.
+- **`receiver[contact]`** Required if type is `individual`. type: object Contact_.
+- **`delivery_address`** Optional. *Invoice's Delivery Address.* type: object Address_.
 - **`reference`** Required. *Invoice reference number.* type: string. format: alphanumeric.
 - **`issue_date`** Required. type: string. format: date.
 - **`invoice_type_code`** Required. *Type of the invoice*. type: char. value:s `'S'` (standard) | `'C'` (credit note).
@@ -131,10 +142,12 @@ Invoice
 - **`total`** Required. *Total amount of the invoice before taxes*. type: decimal. 
 - **`taxes`** Required. *Taxes amount of the invoice*. type: decimal.
 - **`total_due`** Required. *Total amount of the invoice including taxes*. type: decimal.
-- **`journal_entries`** Optional. *Invoice's journal entries*. type: Array(object JournalEntry).
+- **`journal_entries`** Optional. *Invoice's journal entries*. type: Array(object JournalEntry_).
 - **`terms`**: {due_date}
-- **`lines`** Required. *Invoice lines*. type: Array(object InvoiceLine).
+- **`lines`** Required. *Invoice lines*. type: Array(object InvoiceLine_).
+- **`journal_entries`** Optional. *Invoice's journal entries*. type: Array(object JournalEntry_).
 
+.. _InvoiceLine:
 
 InvoiceLine
 -----------
@@ -157,8 +170,9 @@ InvoiceLine
 - **`total`** Required. *Total amount of the invoice line before taxes*. type: decimal.
 - **`taxes`** Required. *Taxes amount of the invoice line*. type: decimal.
 - **`total_due`** Required. *Total amount of the invoice line including taxes*. type: decimal. 
-- **`items`** Required. *Line items*. type: Array(object InvoiceLineItem)
+- **`items`** Required. *Line items*. type: Array(object InvoiceLineItem_)
 
+.. _InvoiceLineItem:
 
 InvoiceLineItem
 ---------------
@@ -189,8 +203,9 @@ InvoiceLineItem
 - **`total`** Required. *Total amount of the invoice line item before taxes*. type: decimal.
 - **`taxes`** Required. *Taxes amount of the invoice line item*. type: decimal. 
 - **`total_due`** Required. *Total amount of the invoice line item including taxes*. type: decimal. 
-- **`journal_entries`** Optional. *Item's journal entries*. type: Array(object JournalEntry).
+- **`journal_entries`** Optional. *Item's journal entries*. type: Array(object JournalEntry_).
 
+.. _JournalEntry:
 
 JournalEntry
 ------------
@@ -201,16 +216,22 @@ JournalEntry
 .. code-block:: json
 
 	{
-		"account_number": "411",
-		"description": "Customer taxes",
-		"credit": 0,
-		"debit": 310.54
+		"app_journal_id": "2",
+		"journal_code": "SA",
+		"journal_description": "Sales",
+		"account_number": "445710",
+		"description": "Collected VAT",
+		"debit": 0,
+		"credit": 310.54
 	}
 
 
 **Attributes**
 
+- **`app_journal_id`** Optional. *Journal ID of the accounting journal*. type: string. format: alphanumeric.
+- **`journal_code`** Optional. *Journal code of the accounting journal*. type: string. format: alphanumeric.
+- **`journal_description`** Optional. *Journal description of the accounting journal*. type: string. format: alphanumeric.
 - **`account_number`** Required. *Account number for the accounting entry*. type: string. format: alphanumeric.
-- **`description`** Optional. *Account description*. type: string. format: alphanumeric
+- **`account_description`** Optional. *Account description*. type: string. format: alphanumeric
 - **`debit`** Required. *Debit amount*. type: decimal
 - **`credit`** Required. *Credit amount*. type: decimal
