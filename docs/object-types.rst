@@ -40,12 +40,14 @@ Company
 
 	{
 		"name": "My Organization",
-		"vat_id": "FR27654654654",
-		"siren_id": "654654654",
-		"siret_id": "65465465400045",
 		"address": {},
 		"phone": "+33401010101",
-		"contacts": []
+		"contacts": [],
+		"identification": {
+			"vat_id":   "FR27654654654",
+			"siren_id": "654654654",
+			"siret_id": "65465465400045",
+		}
 	}
 
 **Attributes**
@@ -57,6 +59,7 @@ Company
 - **`address`** Required. *Address of the company*. type: object Address_.
 - **`phone`** Optional. *Contact phone number of the company*. type: string. format: valid phone number.
 - **`contacts`** Optional. *Contacts of the company*. type: Array(object Contact_).
+- **identification** Required. *Identification of the company*. type: object. *Required fields are based on company's address country_code. For FR companies, ``siren_id`` is required.*
 
 .. _Contact:
 
@@ -96,16 +99,17 @@ Invoice
 
 	{
 		"app_invoice_id": "1234",
-		"sender": {
+		"seller": {
 			"type": "professional",
 			"company": { },
 			"contact": { },
 		},
-		"receiver": {
+		"buyer": {
 			"app_receiver_id": "MYCUSTOMER-45",
 			"type": "professional",
 			"company": { },
 			"contact": { },
+			"person": { },
 		},
 		"delivery_address": { },
 		"reference": "INV201701010004",
