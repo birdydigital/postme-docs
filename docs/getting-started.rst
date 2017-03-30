@@ -54,8 +54,8 @@ API Authentication
       Vary: Accept
       Content-Type: application/json
 
-   :jsonparam `string` _username: APP_ID
-   :jsonparam `string` _password: APP_SECRET
+   :jsonparam `string` app_id: APP_ID
+   :jsonparam `string` app_secret: APP_SECRET
    :reqheader Accept: the response content type depends on
                       :mailheader:`Accept` header
    :resheader Content-Type: this depends on :mailheader:`Accept`
