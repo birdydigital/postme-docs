@@ -125,9 +125,24 @@ Invoice
 
 **Attributes**
 
-|---|---|---|---|---|
-|``app_invoice_id``| ** Required.| *Invoice identifier of the third party application.* |type: string.| format: alphanumeric.|
-|---|---|---|---|---|
++------------------------+------------+----------+----------------------------------------+
+| Header row, column 1   | Header 2   | Header 3 |                               Header 4 |
+| (header rows optional) |            |          |                                        |
++========================+============+==========+========================================+
+| body row 1, column 1   | column 2   | column 3 |                               column 4 |
++------------------------+------------+----------+----------------------------------------+
+| body row 2             | Cells may span columns.                                        |
++------------------------+------------+---------------------------------------------------+
+| body row 3             | Cells may  | - Table cells                                     |
++------------------------+ span rows. | - contain                                         |
+| body row 4             |            | - body elements.                                  |
++------------------------+------------+---------------------------------------------------+
+
+================== ======== =========== ==== ======
+Name               Required Description Type Format
+================== ======== =========== ==== ======
+``app_invoice_id`` ** Required. *Invoice identifier of the third party application.* type: string. format: alphanumeric.
+================== ======== =========== ==== ======
 
 - **`seller_party`** Required. *The seller party of the invoice*.
 - **`seller_party[app_party_id]`** Required. *Party identifier of the third party application.* type: string. format: alphanumeric.
