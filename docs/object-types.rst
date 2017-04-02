@@ -43,8 +43,8 @@ Company
 		"address": {},
 		"contacts": [],
 		"identification": {
-			"vat_id":   "FR27654654654",
 			"siren_id": "654654654",
+			"vat_id":   "FR27654654654",
 			"siret_id": "65465465400045",
 		}
 	}
@@ -52,12 +52,12 @@ Company
 **Attributes**
 
 - ``name`` Required. *The name of the company*. type: string. format: alphanumeric.
-- ``vat_id`` Optional. *VAT Identification Number of the company*. type: string. format: alphanumeric.
-- ``siren_id`` Required. *SIREN Identification Number of the company (for french companies only)*. type: string. format: numeric.
-- ``siret_id`` Optional. *SIRET Identification Number of the company branch (for french companies only)*. type: string. format: numeric.
 - ``address`` Required. *Address of the company*. type: object Address_.
 - ``contacts`` Optional. *Contacts of the company*. type: Array(object Contact_).
-- **identification** Required. *Identification of the company*. type: object. *Required fields are based on company's address country_code. For FR companies, ``siren_id`` is required.*
+- ``identification`` Required. *Identification of the company*. type: object. *Required fields are based on company's address country_code*
+	- ``siren_id`` 'FR': Required. *SIREN Identification Number of the company (for french companies only)*. type: string. format: numeric.
+	- ``vat_id`` Optional. *VAT Identification Number of the company*. type: string. format: alphanumeric.
+	- ``siret_id`` Optional. *SIRET Identification Number of the company branch (for french companies only)*. type: string. format: numeric.
 
 .. _Contact:
 
