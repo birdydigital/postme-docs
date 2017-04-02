@@ -145,7 +145,6 @@ Invoice
 - ``total`` Required. *Total amount of the invoice before taxes*. type: decimal. 
 - ``taxes`` Required. *Taxes amount of the invoice*. type: decimal.
 - ``total_due`` Required. *Total amount of the invoice including taxes*. type: decimal.
-- ``journal_entries`` Optional. *Invoice's journal entries*. type: Array(object JournalEntry_).
 - ``terms``: {due_date}
 - ``lines`` Required. *Invoice lines*. type: Array(object InvoiceLine_).
 - ``journal_entries`` Optional. *Invoice's journal entries*. type: Array(object JournalEntry_).
