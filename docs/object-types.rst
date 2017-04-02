@@ -23,11 +23,11 @@ Address
 
 **Attributes**
 
-- **`address_1`** : Required. *Address 1*. type: string. format: alphanumeric, max length: 255 char.
-- **`address_2`** : Optional. *Address 2*. type: string. format: alphanumeric, max length: 255 char.
-- **`postal_code`** : Required. *Postal Code*. type: string. format: alphanumeric, max length: 16 char.
-- **`city`** : Required. *Postal Code*. type: string. format: alphanumeric, max length: 64 char.
-- **`country_code`** : Required. *Country code of the address*. type: string. format: 2 digits As defined by the ISO 3166-1 alpha-2.
+- ``address_1`` : Required. *Address 1*. type: string. format: alphanumeric, max length: 255 char.
+- ``address_2`` : Optional. *Address 2*. type: string. format: alphanumeric, max length: 255 char.
+- ``postal_code`` : Required. *Postal Code*. type: string. format: alphanumeric, max length: 16 char.
+- ``city`` : Required. *Postal Code*. type: string. format: alphanumeric, max length: 64 char.
+- ``country_code`` : Required. *Country code of the address*. type: string. format: 2 digits As defined by the ISO 3166-1 alpha-2.
 
 .. _Company:
 
@@ -51,12 +51,12 @@ Company
 
 **Attributes**
 
-- **`name`** Required. *The name of the company*. type: string. format: alphanumeric.
-- **`vat_id`** Optional. *VAT Identification Number of the company*. type: string. format: alphanumeric.
-- **`siren_id`** Required. *SIREN Identification Number of the company (for french companies only)*. type: string. format: numeric.
-- **`siret_id`** Optional. *SIRET Identification Number of the company branch (for french companies only)*. type: string. format: numeric.
-- **`address`** Required. *Address of the company*. type: object Address_.
-- **`contacts`** Optional. *Contacts of the company*. type: Array(object Contact_).
+- ``name`` Required. *The name of the company*. type: string. format: alphanumeric.
+- ``vat_id`` Optional. *VAT Identification Number of the company*. type: string. format: alphanumeric.
+- ``siren_id`` Required. *SIREN Identification Number of the company (for french companies only)*. type: string. format: numeric.
+- ``siret_id`` Optional. *SIRET Identification Number of the company branch (for french companies only)*. type: string. format: numeric.
+- ``address`` Required. *Address of the company*. type: object Address_.
+- ``contacts`` Optional. *Contacts of the company*. type: Array(object Contact_).
 - **identification** Required. *Identification of the company*. type: object. *Required fields are based on company's address country_code. For FR companies, ``siren_id`` is required.*
 
 .. _Contact:
@@ -78,10 +78,10 @@ Contact
 
 **Attributes**
 
-- **`name`** Required. *Name of the contact*. type: string. format: alpha.
-- **`email`** Required. *Email of the contact*. type: string. format: valid email.
-- **`phone`** Optional. *Phone number of the contact*. type: string. format: valid phone number as defined by E.164, the international public telecommunication numbering plan.
-- **`address`** Optional. *Address of the contact*. type: object Address_.
+- ``name`` Required. *Name of the contact*. type: string. format: alpha.
+- ``email`` Required. *Email of the contact*. type: string. format: valid email.
+- ``phone`` Optional. *Phone number of the contact*. type: string. format: valid phone number as defined by E.164, the international public telecommunication numbering plan.
+- ``address`` Optional. *Address of the contact*. type: object Address_.
 
 .. _Invoice:
 
@@ -125,40 +125,30 @@ Invoice
 
 **Attributes**
 
-+------------------------+------------------+------------------+--------------------------+--------------------------------------------+
-| Name                   | Required         | Type             | Format                   | Description                                |
-+========================+==================+==================+=======================================================================+
-| ``app_invoice_id``     | True             | string           | alphanum                 | Invoice identifier of the third party app. |
-+------------------------+------------------+------------------+--------------------------+--------------------------------------------+
-|                        |                  |                  |                          |                                            |
-+------------------------+------------------+------------------+--------------------------+--------------------------------------------+
-|                        |                  |                  |                          |                                            |
-+------------------------+------------------+------------------+--------------------------+--------------------------------------------+
-
-
+- ``app_invoice_id`` Required. *Invoice identifier of the third party application*. type: string. format: alphanumeric.
 - ``seller_party`` Required. *The seller party of the invoice*.
-- **`seller_party[app_party_id]`** Required. *Party identifier of the third party application.* type: string. format: alphanumeric.
-- **`seller_party[type]`** Required. type: string. values: `'professional'`.
-- **`seller_party[company]`** Required. *The company of the seller party*. type: object Company_.
-- **`buyer_party[contact]`** Required. *Administrative contact of the seller party*. type: object Contact_.
-- **`buyer_party`** Required. *The buyer party of the invoice*.
-- **`buyer_party[app_party_id]`** Required. *Party identifier of the third party application.* type: string. format: alphanumeric.
-- **`buyer_party[type]`** Required. type: string. values: `'professional'` | `'institutional'` | `'individual'`.
-- **`buyer_party[company]`** Required if type is `professional` (none otherwise). *The company of the buyer party*. type: object Company_.
-- **`buyer_party[contact]`** Required if type is `professional` (none otherwise). *Administrative contact of the buyer party*. type: object Contact_.
-- **`buyer_party[person]`** Required if type is `individual` (none otherwise). type: object Person_.
-- **`delivery_address`** Optional. *Invoice's Delivery Address.* type: object Address_.
-- **`reference`** Required. *Invoice reference number.* type: string. format: alphanumeric.
-- **`issue_date`** Required. type: string. format: date.
-- **`invoice_type_code`** Required. *Type of the invoice*. type: char. value:s `'S'` (standard) | `'C'` (credit note).
-- **`currency_code`** Required. *Currency used in invoice format*. type: string. format: 3 digits as defined by [ISO 4217](https://www.iso.org/iso-4217-currency-codes.html).
-- **`total`** Required. *Total amount of the invoice before taxes*. type: decimal. 
-- **`taxes`** Required. *Taxes amount of the invoice*. type: decimal.
-- **`total_due`** Required. *Total amount of the invoice including taxes*. type: decimal.
-- **`journal_entries`** Optional. *Invoice's journal entries*. type: Array(object JournalEntry_).
-- **`terms`**: {due_date}
-- **`lines`** Required. *Invoice lines*. type: Array(object InvoiceLine_).
-- **`journal_entries`** Optional. *Invoice's journal entries*. type: Array(object JournalEntry_).
+- ``seller_party[app_party_id]`` Required. *Party identifier of the third party application.* type: string. format: alphanumeric.
+- ``seller_party[type]`` Required. type: string. values: `'professional'`.
+- ``seller_party[company]`` Required. *The company of the seller party*. type: object Company_.
+- ``buyer_party[contact]`` Required. *Administrative contact of the seller party*. type: object Contact_.
+- ``buyer_party`` Required. *The buyer party of the invoice*.
+- ``buyer_party[app_party_id]`` Required. *Party identifier of the third party application.* type: string. format: alphanumeric.
+- ``buyer_party[type]`` Required. type: string. values: `'professional'` | `'institutional'` | `'individual'`.
+- ``buyer_party[company]`` Required if type is `professional` (none otherwise). *The company of the buyer party*. type: object Company_.
+- ``buyer_party[contact]`` Required if type is `professional` (none otherwise). *Administrative contact of the buyer party*. type: object Contact_.
+- ``buyer_party[person]`` Required if type is `individual` (none otherwise). type: object Person_.
+- ``delivery_address`` Optional. *Invoice's Delivery Address.* type: object Address_.
+- ``reference`` Required. *Invoice reference number.* type: string. format: alphanumeric.
+- ``issue_date`` Required. type: string. format: date.
+- ``invoice_type_code`` Required. *Type of the invoice*. type: char. value:s `'S'` (standard) | `'C'` (credit note).
+- ``currency_code`` Required. *Currency used in invoice format*. type: string. format: 3 digits as defined by [ISO 4217](https://www.iso.org/iso-4217-currency-codes.html).
+- ``total`` Required. *Total amount of the invoice before taxes*. type: decimal. 
+- ``taxes`` Required. *Taxes amount of the invoice*. type: decimal.
+- ``total_due`` Required. *Total amount of the invoice including taxes*. type: decimal.
+- ``journal_entries`` Optional. *Invoice's journal entries*. type: Array(object JournalEntry_).
+- ``terms``: {due_date}
+- ``lines`` Required. *Invoice lines*. type: Array(object InvoiceLine_).
+- ``journal_entries`` Optional. *Invoice's journal entries*. type: Array(object JournalEntry_).
 
 .. _InvoiceLine:
 
@@ -181,11 +171,11 @@ InvoiceLine
 **Attributes**
 
 
-- **`description`** Optional. *Free form text*. type: string. format: alphanumeric. 
-- **`total`** Required. *Total amount of the invoice line before taxes*. type: decimal.
-- **`taxes`** Required. *Taxes amount of the invoice line*. type: decimal.
-- **`total_due`** Required. *Total amount of the invoice line including taxes*. type: decimal. 
-- **`items`** Required. *Line items*. type: Array(object InvoiceLineItem_)
+- ``description`` Optional. *Free form text*. type: string. format: alphanumeric. 
+- ``total`` Required. *Total amount of the invoice line before taxes*. type: decimal.
+- ``taxes`` Required. *Taxes amount of the invoice line*. type: decimal.
+- ``total_due`` Required. *Total amount of the invoice line including taxes*. type: decimal. 
+- ``items`` Required. *Line items*. type: Array(object InvoiceLineItem_)
 
 .. _InvoiceLineItem:
 
@@ -210,15 +200,15 @@ InvoiceLineItem
 
 **Attributes**
 
-- **`lot_id`** Optional. *Item's lot identification number*. type: string. format: alphanumeric
-- **`description`** Required. type: string. format: alphanumeric. 
-- **`quantity`** Optional. type: decimal. 
-- **`unit`** Optional. type: string. format: alphanumeric
-- **`unit_price`** Optional. type: decimal. 
-- **`total`** Required. *Total amount of the invoice line item before taxes*. type: decimal.
-- **`taxes`** Required. *Taxes amount of the invoice line item*. type: decimal. 
-- **`total_due`** Required. *Total amount of the invoice line item including taxes*. type: decimal. 
-- **`journal_entries`** Optional. *Item's journal entries*. type: Array(object JournalEntry_).
+- ``lot_id`` Optional. *Item's lot identification number*. type: string. format: alphanumeric
+- ``description`` Required. type: string. format: alphanumeric. 
+- ``quantity`` Optional. type: decimal. 
+- ``unit`` Optional. type: string. format: alphanumeric
+- ``unit_price`` Optional. type: decimal. 
+- ``total`` Required. *Total amount of the invoice line item before taxes*. type: decimal.
+- ``taxes`` Required. *Taxes amount of the invoice line item*. type: decimal. 
+- ``total_due`` Required. *Total amount of the invoice line item including taxes*. type: decimal. 
+- ``journal_entries`` Optional. *Item's journal entries*. type: Array(object JournalEntry_).
 
 .. _JournalEntry:
 
@@ -243,13 +233,13 @@ JournalEntry
 
 **Attributes**
 
-- **`app_journal_id`** Optional. *Journal ID of the accounting journal*. type: string. format: alphanumeric.
-- **`journal_code`** Optional. *Journal code of the accounting journal*. type: string. format: alphanumeric.
-- **`journal_description`** Optional. *Journal description of the accounting journal*. type: string. format: alphanumeric.
-- **`account_number`** Required. *Account number for the accounting entry*. type: string. format: alphanumeric.
-- **`account_description`** Optional. *Account description*. type: string. format: alphanumeric
-- **`debit`** Required. *Debit amount*. type: decimal
-- **`credit`** Required. *Credit amount*. type: decimal
+- ``app_journal_id`` Optional. *Journal ID of the accounting journal*. type: string. format: alphanumeric.
+- ``journal_code`` Optional. *Journal code of the accounting journal*. type: string. format: alphanumeric.
+- ``journal_description`` Optional. *Journal description of the accounting journal*. type: string. format: alphanumeric.
+- ``account_number`` Required. *Account number for the accounting entry*. type: string. format: alphanumeric.
+- ``account_description`` Optional. *Account description*. type: string. format: alphanumeric
+- ``debit`` Required. *Debit amount*. type: decimal
+- ``credit`` Required. *Credit amount*. type: decimal
 
 .. _Person:
 
@@ -270,7 +260,7 @@ Person
 
 **Attributes**
 
-- **`name`** Required. *Name of the person*. type: string. format: alpha.
-- **`email`** Required. *Email of the person*. type: string. format: valid email.
-- **`phone`** Optional. *Phone number of the person*. type: string. format: valid phone number as defined by E.164, the international public telecommunication numbering plan.
-- **`address`** Optional. *Address of the person*. type: object Address_.
+- ``name`` Required. *Name of the person*. type: string. format: alpha.
+- ``email`` Required. *Email of the person*. type: string. format: valid email.
+- ``phone`` Optional. *Phone number of the person*. type: string. format: valid phone number as defined by E.164, the international public telecommunication numbering plan.
+- ``address`` Optional. *Address of the person*. type: object Address_.
