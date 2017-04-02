@@ -18,7 +18,7 @@ Address
 		"address_2": "",
 		"postal_code": "69003",
 		"city": "Lyon",
-		"country_code": "FRA"
+		"country_code": "FR"
 	}
 
 **Attributes**
@@ -41,7 +41,6 @@ Company
 	{
 		"name": "My Organization",
 		"address": {},
-		"phone": "+33401010101",
 		"contacts": [],
 		"identification": {
 			"vat_id":   "FR27654654654",
@@ -57,7 +56,6 @@ Company
 - **`siren_id`** Required. *SIREN Identification Number of the company (for french companies only)*. type: string. format: numeric.
 - **`siret_id`** Optional. *SIRET Identification Number of the company branch (for french companies only)*. type: string. format: numeric.
 - **`address`** Required. *Address of the company*. type: object Address_.
-- **`phone`** Optional. *Contact phone number of the company*. type: string. format: valid phone number.
 - **`contacts`** Optional. *Contacts of the company*. type: Array(object Contact_).
 - **identification** Required. *Identification of the company*. type: object. *Required fields are based on company's address country_code. For FR companies, ``siren_id`` is required.*
 
@@ -72,8 +70,7 @@ Contact
 .. code-block:: json
 
 	{
-		"firstname": "John",
-		"lastname": "Doe",
+		"name": "John Doe (accounting service)",
 		"email": "john.doe@company.com",
 		"phone": "+33601010101",
 		"address": { }
@@ -81,10 +78,9 @@ Contact
 
 **Attributes**
 
-- **`firstname`** : *Firstname of the contact*. type: string. format: alpha.
-- **`lastname`** : *Lastname of the contact*. type: string. format: alpha.
-- **`email`** : *Email of the contact*. type: string. format: valid email.
-- **`phone`** : *Phone number of the contact*. type: string. format: valid phone number as defined by E.164, the international public telecommunication numbering plan.
+- **`name`** Required. *Name of the contact*. type: string. format: alpha.
+- **`email`** Required. *Email of the contact*. type: string. format: valid email.
+- **`phone`** Optional. *Phone number of the contact*. type: string. format: valid phone number as defined by E.164, the international public telecommunication numbering plan.
 - **`address`** Optional. *Address of the contact*. type: object Address_.
 
 .. _Invoice:
@@ -99,17 +95,18 @@ Invoice
 
 	{
 		"app_invoice_id": "1234",
-		"seller": {
+		"seller_party": {
+			"app_party_id": "123123",
 			"type": "professional",
 			"company": { },
 			"contact": { },
 		},
-		"buyer": {
-			"app_receiver_id": "MYCUSTOMER-45",
+		"buyer_party": {
+			"app_party_id": "456456",
 			"type": "professional",
 			"company": { },
-			"contact": { },
 			"person": { },
+			"contact": { },
 		},
 		"delivery_address": { },
 		"reference": "INV201701010004",
@@ -129,15 +126,17 @@ Invoice
 **Attributes**
 
 - **`app_invoice_id`** Required. *Invoice identifier of the third party application.* type: string. format: alphanumeric.
-- **`sender`** Required. *The sender of the invoice*.
-- **`sender[type]`** Required. type: string. values: `'professional'`.
-- **`sender[company]`** Required. *The company of the sender*. type: object Company_.
-- **`sender[contact]`** Optional. type: object Contact_.
-- **`receiver`** Required. *The receiver of the invoice*.
-- **`receiver[app_receiver_id]`** Required. *Receiver identifier of the third party application.* type: string. format: alphanumeric.
-- **`receiver[type]`** Required. type: string. values: `'professional'` | `'institutional'` | `'individual'`.
-- **`receiver[company]`** Required if type is `professional`. *The company of the receiver*. type: object Company_.
-- **`receiver[contact]`** Required if type is `individual`. type: object Contact_.
+- **`seller_party`** Required. *The seller party of the invoice*.
+- **`seller_party[app_party_id]`** Required. *Party identifier of the third party application.* type: string. format: alphanumeric.
+- **`seller_party[type]`** Required. type: string. values: `'professional'`.
+- **`seller_party[company]`** Required. *The company of the seller party*. type: object Company_.
+- **`buyer_party[contact]`** Required. *Administrative contact of the seller party*. type: object Contact_.
+- **`buyer_party`** Required. *The buyer party of the invoice*.
+- **`buyer_party[app_party_id]`** Required. *Party identifier of the third party application.* type: string. format: alphanumeric.
+- **`buyer_party[type]`** Required. type: string. values: `'professional'` | `'institutional'` | `'individual'`.
+- **`buyer_party[company]`** Required if type is `professional` (none otherwise). *The company of the buyer party*. type: object Company_.
+- **`buyer_party[person]`** Required if type is `individual` (none otherwise). type: object Contact_.
+- **`buyer_party[contact]`** Required. *Administrative contact of the buyer party*. type: object Contact_.
 - **`delivery_address`** Optional. *Invoice's Delivery Address.* type: object Address_.
 - **`reference`** Required. *Invoice reference number.* type: string. format: alphanumeric.
 - **`issue_date`** Required. type: string. format: date.
@@ -162,6 +161,7 @@ InvoiceLine
 .. code-block:: json
 
 	{
+		"description": "Food",
 		"total": 100,
 		"taxes": 5.5,
 		"total_due": 105.5,
@@ -171,6 +171,7 @@ InvoiceLine
 **Attributes**
 
 
+- **`description`** Optional. *Free form text*. type: string. format: alphanumeric. 
 - **`total`** Required. *Total amount of the invoice line before taxes*. type: decimal.
 - **`taxes`** Required. *Taxes amount of the invoice line*. type: decimal.
 - **`total_due`** Required. *Total amount of the invoice line including taxes*. type: decimal. 
