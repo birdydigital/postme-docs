@@ -136,7 +136,7 @@ Invoice
 +------------------------+------------------+------------------+--------------------------+--------------------------------------------+
 
 
-- **`seller_party`** Required. *The seller party of the invoice*.
+- ``seller_party`` Required. *The seller party of the invoice*.
 - **`seller_party[app_party_id]`** Required. *Party identifier of the third party application.* type: string. format: alphanumeric.
 - **`seller_party[type]`** Required. type: string. values: `'professional'`.
 - **`seller_party[company]`** Required. *The company of the seller party*. type: object Company_.
