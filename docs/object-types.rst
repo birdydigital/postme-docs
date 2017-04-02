@@ -105,8 +105,8 @@ Invoice
 			"app_party_id": "456456",
 			"type": "professional",
 			"company": { },
-			"person": { },
 			"contact": { },
+			"person": { },
 		},
 		"delivery_address": { },
 		"reference": "INV201701010004",
@@ -135,8 +135,8 @@ Invoice
 - **`buyer_party[app_party_id]`** Required. *Party identifier of the third party application.* type: string. format: alphanumeric.
 - **`buyer_party[type]`** Required. type: string. values: `'professional'` | `'institutional'` | `'individual'`.
 - **`buyer_party[company]`** Required if type is `professional` (none otherwise). *The company of the buyer party*. type: object Company_.
-- **`buyer_party[person]`** Required if type is `individual` (none otherwise). type: object Contact_.
-- **`buyer_party[contact]`** Required. *Administrative contact of the buyer party*. type: object Contact_.
+- **`buyer_party[contact]`** Required if type is `professional` (none otherwise). *Administrative contact of the buyer party*. type: object Contact_.
+- **`buyer_party[person]`** Required if type is `individual` (none otherwise). type: object Person_.
 - **`delivery_address`** Optional. *Invoice's Delivery Address.* type: object Address_.
 - **`reference`** Required. *Invoice reference number.* type: string. format: alphanumeric.
 - **`issue_date`** Required. type: string. format: date.
@@ -240,3 +240,27 @@ JournalEntry
 - **`account_description`** Optional. *Account description*. type: string. format: alphanumeric
 - **`debit`** Required. *Debit amount*. type: decimal
 - **`credit`** Required. *Credit amount*. type: decimal
+
+.. _Person:
+
+Person
+-------
+
+**JSON Object example**
+
+
+.. code-block:: json
+
+	{
+		"name": "John Doe",
+		"email": "john.doe@gmail.com",
+		"phone": "+33601010101",
+		"address": { }
+	}
+
+**Attributes**
+
+- **`name`** Required. *Name of the person*. type: string. format: alpha.
+- **`email`** Required. *Email of the person*. type: string. format: valid email.
+- **`phone`** Optional. *Phone number of the person*. type: string. format: valid phone number as defined by E.164, the international public telecommunication numbering plan.
+- **`address`** Optional. *Address of the person*. type: object Address_.
