@@ -41,7 +41,6 @@ Company
 	{
 		"name": "My Organization",
 		"address": {},
-		"contacts": [],
 		"identification": {
 			"siren_id": "654654654",
 			"vat_id":   "FR27654654654",
@@ -53,7 +52,6 @@ Company
 
 - ``name`` Required. *The name of the company*. type: string. format: alphanumeric.
 - ``address`` Required. *Address of the company*. type: object Address_.
-- ``contacts`` Optional. *Contacts of the company*. type: Array(object Contact_).
 - ``identification`` Required. *Identification of the company*. type: object. *Required fields are based on company's address country_code*
 	- ``siren_id`` 'FR': Required. *SIREN Identification Number of the company (for french companies only)*. type: string. format: numeric.
 	- ``vat_id`` Optional. *VAT Identification Number of the company*. type: string. format: alphanumeric.
@@ -99,13 +97,13 @@ Invoice
 			"app_party_id": "123123",
 			"type": "professional",
 			"company": { },
-			"contact": { },
+			"contacts": [ ],
 		},
 		"buyer_party": {
 			"app_party_id": "456456",
 			"type": "professional",
 			"company": { },
-			"contact": { },
+			"contacts": [ ],
 			"person": { },
 		},
 		"delivery_address": { },
@@ -130,12 +128,12 @@ Invoice
 - ``seller_party[app_party_id]`` Required. *Party identifier of the third party application.* type: string. format: alphanumeric.
 - ``seller_party[type]`` Required. type: string. values: `'professional'`.
 - ``seller_party[company]`` Required. *The company of the seller party*. type: object Company_.
-- ``buyer_party[contact]`` Required. *Administrative contact of the seller party*. type: object Contact_.
+- ``seller_party[contacts]`` Required. *Administrative contacts of the seller party*. type: Array(object Contact_).
 - ``buyer_party`` Required. *The buyer party of the invoice*.
 - ``buyer_party[app_party_id]`` Required. *Party identifier of the third party application.* type: string. format: alphanumeric.
 - ``buyer_party[type]`` Required. type: string. values: `'professional'` | `'institutional'` | `'individual'`.
 - ``buyer_party[company]`` Required if type is `professional` (none otherwise). *The company of the buyer party*. type: object Company_.
-- ``buyer_party[contact]`` Required if type is `professional` (none otherwise). *Administrative contact of the buyer party*. type: object Contact_.
+- ``buyer_party[contacts]`` Required if type is `professional` (none otherwise). *Administrative contacts of the buyer party*. type: Array(object Contact_).
 - ``buyer_party[person]`` Required if type is `individual` (none otherwise). type: object Person_.
 - ``delivery_address`` Optional. *Invoice's Delivery Address.* type: object Address_.
 - ``reference`` Required. *Invoice reference number.* type: string. format: alphanumeric.
