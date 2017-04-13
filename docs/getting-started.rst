@@ -62,8 +62,3 @@ API Authentication
                             header of request
    :statuscode 200: No error
    :statuscode 401: Unauthorized
-
-
-
-Postchain Access and API keys
------------------------------
