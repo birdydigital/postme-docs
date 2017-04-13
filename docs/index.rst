@@ -9,7 +9,7 @@ postme.io developers documentation
 .. toctree::
    :glob:
 
-   introduction/*
+   introduction*
    getting-started/*
    invoices/*
    object-types/*
