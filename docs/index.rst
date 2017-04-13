@@ -7,7 +7,6 @@ postme.io developers documentation
 ==================================
 
 .. toctree::
-   :glob:
 
    introduction/*
    getting-started/*
