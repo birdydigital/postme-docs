@@ -7,10 +7,8 @@ postme.io developers documentation
 ==================================
 
 .. toctree::
-   :maxdepth: 2
-   :caption: Contents:
 
-* :ref:`getting-started`
-* :ref:`invoices`
-* :ref:`object-types`
-* :ref:`search`
+   getting-started
+   invoices
+   object-types
+   search
