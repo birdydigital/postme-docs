@@ -3,8 +3,8 @@
 Getting started
 ===============
 
-Access and API keys
--------------------
+Postme Access and API keys
+--------------------------
 
 Create a developer account
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -62,3 +62,8 @@ API Authentication
                             header of request
    :statuscode 200: No error
    :statuscode 401: Unauthorized
+
+
+
+Postchain Access and API keys
+-----------------------------
