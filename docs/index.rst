@@ -10,6 +10,7 @@ postme.io developers documentation
    :glob:
 
    introduction
+   terminology
    getting-started
    invoices
    object-types
