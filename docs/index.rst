@@ -8,7 +8,6 @@ postme.io developers documentation
 
 .. toctree::
    :glob:
-   :reversed:
 
    introduction/*
    getting-started/*
