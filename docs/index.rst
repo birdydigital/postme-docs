@@ -7,7 +7,6 @@ postme.io developers documentation
 ==================================
 
 .. toctree::
-   :reversed:
 
    introduction
    getting-started/*
