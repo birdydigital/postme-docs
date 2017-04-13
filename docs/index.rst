@@ -13,3 +13,4 @@ postme.io developers documentation
    getting-started
    invoices
    object-types
+   *
