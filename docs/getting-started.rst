@@ -1,12 +1,5 @@
 .. _getting-started:
 
-.. toctree::
-
-   introduction
-   getting-started
-   invoices
-   object-types
-
 Getting started
 ===============
 
