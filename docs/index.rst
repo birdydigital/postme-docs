@@ -8,7 +8,7 @@ postme.io developers documentation
 
 .. toctree::
 
+   introduction
    getting-started
    invoices
    object-types
-   search
