@@ -1,7 +1,7 @@
-.. _introduction:
+.. _overview:
 
-Introduction
-============
+Overview
+========
 
 From duplicative invoice to single invoice.
 

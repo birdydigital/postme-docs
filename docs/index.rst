@@ -9,7 +9,7 @@ postme.io developers documentation
 .. toctree::
    :glob:
 
-   introduction
+   overview
    terminology
    getting-started
    invoices
