@@ -7,8 +7,9 @@ postme.io developers documentation
 ==================================
 
 .. toctree::
+   :reversed:
 
-   introduction/*
+   introduction
    getting-started/*
    invoices/*
    object-types/*
