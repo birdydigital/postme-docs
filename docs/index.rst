@@ -14,4 +14,6 @@ Postme.io Developers Documentation
    getting-started
    invoices
    object-types
+   kyc-editor
+   kyc-organization
    *
