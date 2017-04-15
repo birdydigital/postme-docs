@@ -63,7 +63,7 @@ Authentication
    :reqheader Accept: ``application/json``
    :resheader Content-Type: ``application/json``
    :statuscode 200: Authentication succeeded
-   :statuscode 401: Unauthorized
+   :statuscode 401: Wrong credentials
 
 
 Using Postchain

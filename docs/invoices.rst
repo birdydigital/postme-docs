@@ -13,7 +13,7 @@ Send a new invoice
    .. sourcecode:: http
 
       POST /api/invoices HTTP/1.1
-      Host: app.postme.io
+      Host: example.com
       Accept: application/json
 
    **Example response**:
@@ -25,14 +25,12 @@ Send a new invoice
       Content-Type: application/json
 
    :jsonparam `object-invoice` invoice: the invoice
-   :reqheader Accept: the response content type depends on
-                      :mailheader:`Accept` header
-   :reqheader Authorization: Bearer [TOKEN]
-   :resheader Content-Type: this depends on :mailheader:`Accept`
-                            header of request
-   :statuscode 200: No error
-   :statuscode 401: Unauthorized
-   :statuscode 400: Bad request
+   :reqheader Accept: ``application/json``
+   :reqheader Authorization: ``Bearer [TOKEN]``
+   :resheader Content-Type: ``application/json``
+   :statuscode 202: Invoice successfully sent to postme
+   :statuscode 401: Invalid Authorization Token
+   :statuscode 400: Invalid params
 
 
 Retrieve invoices
