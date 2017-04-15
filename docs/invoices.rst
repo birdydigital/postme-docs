@@ -33,3 +33,9 @@ Send a new invoice
    :statuscode 200: No error
    :statuscode 401: Unauthorized
    :statuscode 400: Bad request
+
+
+Retrieve invoices
+-----------------
+
+

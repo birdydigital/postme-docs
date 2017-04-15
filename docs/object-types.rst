@@ -6,7 +6,7 @@ Object Types
 .. _Address:
 
 Address
-----------
+-------
 
 **JSON Object example**
 

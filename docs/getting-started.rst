@@ -23,8 +23,9 @@ Register your application
 * Enter a title for your app (i.e. "My invoicing system")
 * Save
 
-Generate a key
-~~~~~~~~~~~~~~
+
+Generate your application credentials
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Once your application is created, you can generate App ID/key pairs to get API access.
 
@@ -36,8 +37,8 @@ Once your application is created, you can generate App ID/key pairs to get API a
 Using Postme API
 ----------------
 
-API Authentication
-~~~~~~~~~~~~~~~~~~
+Authentication
+~~~~~~~~~~~~~~
 
 .. http:post:: /api/login
 
@@ -65,3 +66,15 @@ API Authentication
                             header of request
    :statuscode 200: No error
          :statuscode 401: Unauthorized
+
+
+Using Postchain
+---------------
+
+Create a new private/public keys
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Behaviour
+~~~~~~~~~
+
+.. image:: send_invoice_process.png
