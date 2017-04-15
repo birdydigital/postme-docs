@@ -13,7 +13,16 @@ Editor Node
 
 Chartered Node
 --------------
+ (in progress)
 
+
+Organization Node
+-----------------
+ (in progress)
+
+
+Peer Node
+---------
  (in progress)
 
 

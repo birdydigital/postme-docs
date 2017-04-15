@@ -3,8 +3,8 @@
 Getting started
 ===============
 
-Postme Access and API keys
---------------------------
+Prerequisites
+-------------
 
 Create a developer account
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -33,8 +33,11 @@ Once your application is created, you can generate App ID/key pairs to get API a
 * If you want to use these credentials for test purpose, check "Sandbox Mode"
 
 
+Using Postme API
+----------------
+
 API Authentication
-------------------
+~~~~~~~~~~~~~~~~~~
 
 .. http:post:: /api/login
 
@@ -55,10 +58,10 @@ API Authentication
       Content-Type: application/json
 
    :jsonparam `string` app_id: APP_ID
-   :jsonparam `string` app_secret: APP_SECRET
-   :reqheader Accept: the response content type depends on
-                      :mailheader:`Accept` header
+         :jsonparam `string` app_secret: APP_SECRET
+         :reqheader Accept: the response content type depends on
+                            :mailheader:`Accept` header
    :resheader Content-Type: this depends on :mailheader:`Accept`
                             header of request
    :statuscode 200: No error
-   :statuscode 401: Unauthorized
+         :statuscode 401: Unauthorized
