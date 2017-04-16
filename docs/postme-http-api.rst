@@ -64,7 +64,7 @@ Companies
          "identification": {
             "siren_id": "654654654",
             "vat_id":   "FR27654654654",
-            "siret_id": "65465465400045",
+            "siret_id": "65465465400045"
          }
       }
 
