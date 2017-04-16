@@ -1,7 +1,7 @@
-.. _invoices:
+.. _postme-http-api:
 
-Invoices
-========
+Postme HTTP API
+===============
 
 Send a new invoice
 ------------------

@@ -1,14 +1,14 @@
-.. _object-types:
+.. data-models:
 
-Object Types
-============
+Data Models
+===========
 
 .. _Address:
 
 Address
 -------
 
-**JSON Object example**
+**Structure**
 
 
 .. code-block:: json
@@ -34,7 +34,7 @@ Address
 Company
 -------
 
-**JSON Object example**
+**Structure**
 
 .. code-block:: json
 
@@ -62,7 +62,7 @@ Company
 Contact
 -------
 
-**JSON Object example**
+**Structure**
 
 
 .. code-block:: json
@@ -86,7 +86,7 @@ Contact
 Invoice
 -------
 
-**JSON Object example**
+**Structure**
 
 
 .. code-block:: json
@@ -152,7 +152,7 @@ Invoice
 InvoiceLine
 -----------
 
-**JSON Object example**
+**Structure**
 
 
 .. code-block:: json
@@ -179,7 +179,7 @@ InvoiceLine
 InvoiceLineItem
 ---------------
 
-**JSON Object example**
+**Structure**
 
 .. code-block:: json
 
@@ -213,7 +213,7 @@ JournalEntry
 ------------
 
 
-**JSON Object example**
+**Structure**
 
 .. code-block:: json
 
@@ -243,7 +243,7 @@ JournalEntry
 Person
 -------
 
-**JSON Object example**
+**Structure**
 
 
 .. code-block:: json

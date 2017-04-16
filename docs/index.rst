@@ -12,8 +12,9 @@ Postme.io Developers Documentation
    overview
    terminology
    getting-started
+   postme-http-api
    invoices
-   object-types
+   data-models
    kyc-editor
    kyc-organization
    *
