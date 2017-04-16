@@ -54,7 +54,7 @@ Authentication
 
    .. sourcecode:: http
 
-      HTTP/1.1 200
+      HTTP/1.1 200 OK
       Vary: Accept
       Content-Type: application/json
 

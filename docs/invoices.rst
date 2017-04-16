@@ -20,7 +20,7 @@ Send a new invoice
 
    .. sourcecode:: http
 
-      HTTP/1.1 200 Success
+      HTTP/1.1 202 Accepted
       Vary: Accept
       Content-Type: application/json
 
