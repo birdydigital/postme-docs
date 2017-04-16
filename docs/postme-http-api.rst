@@ -3,10 +3,12 @@
 Postme HTTP API
 ===============
 
-Send a new invoice
-------------------
+Invoices
+--------
 
 .. http:post:: /api/invoices
+
+   Push a new invoice.
 
    **Example request**:
 
@@ -32,10 +34,6 @@ Send a new invoice
    :statuscode 401: Invalid Authorization Token
    :statuscode 400: Invalid params
 
-
-Retrieve invoices
------------------
-
 Companies
 ---------
 
@@ -50,6 +48,22 @@ Companies
       POST /api/company HTTP/1.1
       Host: example.com
       Accept: application/json
+
+      {
+         "name": "My Organization",
+         "address":  {
+            "address_1": "456 Street Name",
+            "address_2": "",
+            "postal_code": "69003",
+            "city": "Lyon",
+            "country_code": "FR"
+         },
+         "identification": {
+            "siren_id": "654654654",
+            "vat_id":   "FR27654654654",
+            "siret_id": "65465465400045",
+         }
+      }
 
    **Example response**:
 
