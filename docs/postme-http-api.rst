@@ -49,24 +49,23 @@ Companies
       Host: example.com
       Accept: application/json
 
+      .. sourcecode:: json
 
-   .. sourcecode:: json
-
-      {
-         "name": "My Organization",
-         "address":  {
-            "address_1": "456 Street Name",
-            "address_2": "",
-            "postal_code": "69003",
-            "city": "Lyon",
-            "country_code": "FR"
-         },
-         "identification": {
-            "siren_id": "654654654",
-            "vat_id":   "FR27654654654",
-            "siret_id": "65465465400045"
+         {
+            "name": "My Organization",
+            "address":  {
+               "address_1": "456 Street Name",
+               "address_2": "",
+               "postal_code": "69003",
+               "city": "Lyon",
+               "country_code": "FR"
+            },
+            "identification": {
+               "siren_id": "654654654",
+               "vat_id":   "FR27654654654",
+               "siret_id": "65465465400045"
+            }
          }
-      }
 
    **Example response**:
 
