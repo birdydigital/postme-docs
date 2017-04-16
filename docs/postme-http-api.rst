@@ -50,7 +50,7 @@ Companies
       Accept: application/json
 
 
-   .. code-block:: json
+   .. sourcecode:: json
 
       {
          "name": "My Organization",
