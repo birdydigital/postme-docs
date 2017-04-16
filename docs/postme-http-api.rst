@@ -49,6 +49,9 @@ Companies
       Host: example.com
       Accept: application/json
 
+
+   .. code-block:: json
+
       {
          "name": "My Organization",
          "address":  {
