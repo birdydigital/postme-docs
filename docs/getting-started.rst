@@ -47,7 +47,7 @@ Authentication
    .. sourcecode:: http
 
       POST /api/login HTTP/1.1
-      Host: app.postme.io
+      Host: example.com
       Accept: application/json
 
    **Example response**:
@@ -58,14 +58,12 @@ Authentication
       Vary: Accept
       Content-Type: application/json
 
-   :jsonparam `string` app_id: APP_ID
-         :jsonparam `string` app_secret: APP_SECRET
-         :reqheader Accept: the response content type depends on
-                            :mailheader:`Accept` header
-   :resheader Content-Type: this depends on :mailheader:`Accept`
-                            header of request
-   :statuscode 200: No error
-         :statuscode 401: Unauthorized
+   :jsonparam `string` app_id: your APP_ID
+   :jsonparam `string` app_secret: your APP_SECRET
+   :reqheader Accept: ``application/json``
+   :resheader Content-Type: ``application/json``
+   :statuscode 200: Authentication succeeded
+   :statuscode 401: Wrong credentials
 
 
 Using Postchain
