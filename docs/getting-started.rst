@@ -68,7 +68,9 @@ Authentication
 Root URL
 ~~~~~~~~
 
-If you send an HTTP GET request to the Postme API Root URL e.g. `https://api.postme.io/api`, then you should get an HTTP response with something like the following in the body:
+If you send an HTTP GET request to the Postme API Root URL e.g. ``https://api.postme.io/api``, then you should get an HTTP response with something like the following in the body:
+
+(In Progress)
 
 .. sourcecode:: http
 
@@ -87,12 +89,13 @@ If you send an HTTP GET request to the Postme API Root URL e.g. `https://api.pos
             "version": "0.1.0"
       }
 
-(In Progress)
 
 Root Endpoint
 ~~~~~~~~~~~~~
 
-If you send an HTTP GET request to the Postme API Root Endpoint e.g. `https://api.postme.io/api/v1`, then you should get an HTTP response that allows you to discover the Postme API endpoints :
+If you send an HTTP GET request to the Postme API Root Endpoint e.g. ``https://api.postme.io/api/v1``, then you should get an HTTP response that allows you to discover the Postme API endpoints :
+
+(In Progress)
 
 .. sourcecode:: http
 
@@ -107,8 +110,6 @@ If you send an HTTP GET request to the Postme API Root Endpoint e.g. `https://ap
             }
       }
 
-
-(In Progress)
 
 Using Postchain
 ---------------
