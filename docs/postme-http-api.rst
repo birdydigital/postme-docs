@@ -48,7 +48,7 @@ Companies
       POST /api/company HTTP/1.1
       Host: example.com
       Accept: application/json
-
+      
       {
          "name": "My Organization",
          "address":  {
@@ -61,7 +61,7 @@ Companies
          "identification": {
             "siren_id": "654654654",
             "vat_id":   "FR27654654654",
-            "siret_id": "65465465400045",
+            "siret_id": "65465465400045"
          }
       }
 
