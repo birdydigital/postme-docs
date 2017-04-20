@@ -125,6 +125,55 @@ Parties
    :statuscode 401: Invalid Authorization Token
    :statuscode 400: Invalid params
 
+.. http:get:: /api/parties
+   
+   Get all parties
+
+   **Example request**:
+
+   .. sourcecode:: http
+
+      GET /api/parties HTTP/1.1
+      Host: example.com
+
+   **Example response**:
+
+   .. sourcecode:: http
+
+      HTTP/1.1 200 OK
+      Content-Type: application/json
+
+      [
+         {
+            "app_party_id": "456456",
+            "app_reference": "CUSTOMER-145"
+            "type": "individual",
+            "person": {
+               "name": "John Doe",
+               "email": "john.doe@gmail.com",
+               "phone": "+33601010101",
+               "address": { }
+            }
+         },
+         {
+            "app_party_id": "456456",
+            "app_reference": "CUSTOMER-145"
+            "type": "individual",
+            "person": {
+               "name": "John Doe",
+               "email": "john.doe@gmail.com",
+               "phone": "+33601010101",
+               "address": { }
+            }
+         }
+      ]
+
+   :reqheader Authorization: ``Bearer [TOKEN]``
+   :resheader Content-Type: ``application/json``
+   :statuscode 200: A list of parties
+   :statuscode 401: Invalid Authorization Token
+   :statuscode 400: Invalid params
+
 .. http:get:: /api/parties/{app_party_id}
    
    Get the party with the APP ID ``app_party_id``.
@@ -157,7 +206,7 @@ Parties
 
    :reqheader Authorization: ``Bearer [TOKEN]``
    :resheader Content-Type: ``application/json``
-   :statuscode 201: Party created
+   :statuscode 200: A Party with that ID was found
    :statuscode 401: Invalid Authorization Token
    :statuscode 400: Invalid params
 
