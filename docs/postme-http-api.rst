@@ -145,6 +145,7 @@ Parties
 
       [
          {
+            "id": "00b1c348-260b-11e7-80e3-c6514258f3b9",
             "app_party_id": "456456",
             "app_reference": "CUSTOMER-145"
             "type": "individual",
@@ -156,6 +157,7 @@ Parties
             }
          },
          {
+            "id": "ffb057b4-260a-11e7-80e3-c6514258f3b9",
             "app_party_id": "456456",
             "app_reference": "CUSTOMER-145"
             "type": "individual",
@@ -182,7 +184,7 @@ Parties
 
    .. sourcecode:: http
 
-      GET /api/parties/fd4g654s654df65s4f6s5 HTTP/1.1
+      GET /api/parties/fde7cc83-260a-11e7-80e3-c6514258f3b9 HTTP/1.1
       Host: example.com
 
    **Example response**:
@@ -193,6 +195,7 @@ Parties
       Content-Type: application/json
 
       {
+         "id": "fde7cc83-260a-11e7-80e3-c6514258f3b9",
          "app_party_id": "456456",
          "app_reference": "CUSTOMER-145"
          "type": "individual",
