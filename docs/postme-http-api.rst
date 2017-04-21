@@ -17,7 +17,7 @@ Companies
 
       POST /api/company HTTP/1.1
       Host: example.com
-      Accept: application/json
+      Content-Type: application/json
       
       {
          "name": "My Organization",
@@ -64,7 +64,7 @@ Invoices
 
       POST /api/invoices HTTP/1.1
       Host: example.com
-      Accept: application/json
+      Content-Type: application/json
 
    **Example response**:
 
@@ -96,7 +96,7 @@ Parties
 
       POST /api/parties HTTP/1.1
       Host: example.com
-      Accept: application/json
+      Content-Type: application/json
       
       {
          "app_party_id": "456456",
