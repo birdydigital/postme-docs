@@ -30,7 +30,7 @@ Companies
          },
          "identification": {
             "siren_id": "654654654",
-            "vat_id":   "FR27654654654",
+            "vat_id": "FR27654654654",
             "siret_id": "65465465400045"
          }
       }
@@ -100,7 +100,7 @@ Parties
       
       {
          "app_party_id": "456456",
-         "app_reference": "CUSTOMER-145"
+         "app_reference": "CUSTOMER-145",
          "type": "individual",
          "person": {
             "name": "John Doe",
