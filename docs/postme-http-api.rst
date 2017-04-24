@@ -176,9 +176,9 @@ Parties
    :statuscode 401: Invalid Authorization Token
    :statuscode 400: Invalid params
 
-.. http:get:: /api/parties/{app_party_id}
+.. http:get:: /api/parties/{id}
    
-   Get the party with the APP ID ``app_party_id``.
+   Get the party with the ID ``id``.
 
    **Example request**:
 
