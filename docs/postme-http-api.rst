@@ -198,7 +198,7 @@ Parties
       {
          "id": "fde7cc83-260a-11e7-80e3-c6514258f3b9",
          "app_id": "456456",
-         "app_reference": "CUSTOMER-145"
+         "app_reference": "CUSTOMER-145",
          "type": "individual",
          "person": {
             "name": "John Doe",
