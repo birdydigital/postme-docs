@@ -47,8 +47,8 @@ Companies
    :reqheader Authorization: ``Bearer [TOKEN]``
    :resheader Content-Type: ``application/json``
    :statuscode 201: Company created
-   :statuscode 401: Invalid Authorization Token
    :statuscode 400: Invalid params
+   :statuscode 401: Invalid Authorization Token
 
 
 Invoices
@@ -79,8 +79,8 @@ Invoices
    :reqheader Authorization: ``Bearer [TOKEN]``
    :resheader Content-Type: ``application/json``
    :statuscode 202: Invoice successfully sent to postme
-   :statuscode 401: Invalid Authorization Token
    :statuscode 400: Invalid params
+   :statuscode 401: Invalid Authorization Token
 
 
 Parties
@@ -174,8 +174,8 @@ Parties
    :reqheader Authorization: ``Bearer [TOKEN]``
    :resheader Content-Type: ``application/json``
    :statuscode 200: A list of parties
-   :statuscode 401: Invalid Authorization Token
    :statuscode 400: Invalid params
+   :statuscode 401: Invalid Authorization Token
 
 .. http:get:: /api/parties/{app_id}
    
@@ -211,6 +211,6 @@ Parties
    :reqheader Authorization: ``Bearer [TOKEN]``
    :resheader Content-Type: ``application/json``
    :statuscode 200: A Party with that ID was found
-   :statuscode 401: Invalid Authorization Token
    :statuscode 400: Invalid params
+   :statuscode 401: Invalid Authorization Token
 
