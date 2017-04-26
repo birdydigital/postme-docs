@@ -122,8 +122,9 @@ Parties
    :reqheader Authorization: ``Bearer [TOKEN]``
    :resheader Content-Type: ``application/json``
    :statuscode 201: Party created
-   :statuscode 401: Invalid Authorization Token
    :statuscode 400: Invalid params
+   :statuscode 401: Invalid Authorization Token
+   :statuscode 409: Another party with ID ``app_id`` already exists
 
 .. http:get:: /api/parties
    
