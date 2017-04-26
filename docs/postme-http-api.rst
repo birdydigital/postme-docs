@@ -99,7 +99,7 @@ Parties
       Content-Type: application/json
       
       {
-         "app_party_id": "456456",
+         "app_id": "456456",
          "app_reference": "CUSTOMER-145",
          "type": "individual",
          "person": {
@@ -146,8 +146,8 @@ Parties
       [
          {
             "id": "00b1c348-260b-11e7-80e3-c6514258f3b9",
-            "app_party_id": "456456",
-            "app_reference": "CUSTOMER-145"
+            "app_id": "456456",
+            "app_reference": "CUSTOMER-145",
             "type": "individual",
             "person": {
                "name": "John Doe",
@@ -159,7 +159,7 @@ Parties
          {
             "id": "ffb057b4-260a-11e7-80e3-c6514258f3b9",
             "app_party_id": "456456",
-            "app_reference": "CUSTOMER-145"
+            "app_reference": "CUSTOMER-145",
             "type": "individual",
             "person": {
                "name": "John Doe",
@@ -176,15 +176,15 @@ Parties
    :statuscode 401: Invalid Authorization Token
    :statuscode 400: Invalid params
 
-.. http:get:: /api/parties/{id}
+.. http:get:: /api/parties/{app_id}
    
-   Get the party with the ID ``id``.
+   Get the party with the ID ``app_id``.
 
    **Example request**:
 
    .. sourcecode:: http
 
-      GET /api/parties/fde7cc83-260a-11e7-80e3-c6514258f3b9 HTTP/1.1
+      GET /api/parties/456456 HTTP/1.1
       Host: example.com
 
    **Example response**:
@@ -196,7 +196,7 @@ Parties
 
       {
          "id": "fde7cc83-260a-11e7-80e3-c6514258f3b9",
-         "app_party_id": "456456",
+         "app_id": "456456",
          "app_reference": "CUSTOMER-145"
          "type": "individual",
          "person": {
