@@ -112,9 +112,23 @@ Invoice
 		"issue_date": "2017-01-01",
 		"invoice_type_code": "S",
 		"currency_code": "EUR",
-		"total": 100,
-		"taxes": 5.5,
-		"total_due": 105.5,
+		"taxes": [
+			{
+				"tax_rate": 5.5,
+				"total": 200,
+				"total_taxes": 11,
+				"total_due": 211
+			},
+			{
+				"tax_rate": 19.6,
+				"total": 1000,
+				"total_taxes": 196,
+				"total_due": 1196
+			}
+		],
+		"total": 1200,
+		"total_taxes": 207,
+		"total_due": 1407,
 		"terms": {
 			"due_date": "2017-02-01",
 			"payment": "Before Jun 31st",
@@ -146,7 +160,7 @@ Invoice
 - ``invoice_type_code`` Required. *Type of the invoice*. type: char. value:s `'S'` (standard) | `'C'` (credit note).
 - ``currency_code`` Required. *Currency used in invoice format*. type: string. format: 3 digits as defined by [ISO 4217](https://www.iso.org/iso-4217-currency-codes.html).
 - ``total`` Required. *Total amount of the invoice before taxes*. type: decimal. 
-- ``taxes`` Required. *Taxes amount of the invoice*. type: decimal.
+- ``total_taxes`` Required. *Taxes amount of the invoice*. type: decimal.
 - ``total_due`` Required. *Total amount of the invoice including taxes*. type: decimal.
 - ``terms``: Optional. *List of terms. See JSON example for available fields*. type: Array<Dict>.
 - ``lines`` Required. *Invoice lines*. type: Array<object InvoiceLine_>.
@@ -165,9 +179,23 @@ InvoiceLine
 
 	{
 		"description": "Food",
-		"total": 100,
-		"taxes": 5.5,
-		"total_due": 105.5,
+		"taxes": [
+			{
+				"tax_rate": 5.5,
+				"total": 20,
+				"total_taxes": 1.1,
+				"total_due": 21.1
+			},
+			{
+				"tax_rate": 19.6,
+				"total": 10,
+				"total_taxes": 1.96,
+				"total_due": 11.96
+			}
+		],
+		"total": 30,
+		"total_taxes": 2.07,
+		"total_due": 32.07,
 		"items": []
 	}
 
@@ -196,7 +224,8 @@ InvoiceLineItem
 		"unit": "kg",
 		"unit_price": 4,
 		"total": 50,
-		"taxes": 2.75,
+		"tax_rate": 5.5,
+		"total_taxes": 2.75,
 		"total_due": 52.75,
 		"journal_entries": []
 	}
@@ -209,7 +238,7 @@ InvoiceLineItem
 - ``unit`` Optional. type: string. format: alphanumeric
 - ``unit_price`` Optional. type: decimal. 
 - ``total`` Required. *Total amount of the invoice line item before taxes*. type: decimal.
-- ``taxes`` Required. *Taxes amount of the invoice line item*. type: decimal. 
+- ``total_taxes`` Required. *Taxes amount of the invoice line item*. type: decimal. 
 - ``total_due`` Required. *Total amount of the invoice line item including taxes*. type: decimal. 
 - ``journal_entries`` Optional. *Item's journal entries*. type: Array<object JournalEntry_>.
 
