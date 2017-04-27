@@ -159,6 +159,7 @@ Invoice
 - ``issue_date`` Required. type: string. format: date.
 - ``invoice_type_code`` Required. *Type of the invoice*. type: char. value:s `'S'` (standard) | `'C'` (credit note).
 - ``currency_code`` Required. *Currency used in invoice format*. type: string. format: 3 digits as defined by [ISO 4217](https://www.iso.org/iso-4217-currency-codes.html).
+- ``taxes`` Optional. *An array of taxes with a different rate for the invoice*.
 - ``total`` Required. *Total amount of the invoice before taxes*. type: decimal. 
 - ``total_taxes`` Required. *Taxes amount of the invoice*. type: decimal.
 - ``total_due`` Required. *Total amount of the invoice including taxes*. type: decimal.
@@ -203,6 +204,7 @@ InvoiceLine
 
 
 - ``description`` Optional. *Free form text*. type: string. format: alphanumeric. 
+- ``taxes`` Optional. *An array of taxes with a different rate for the invoice*.
 - ``total`` Required. *Total amount of the invoice line before taxes*. type: decimal.
 - ``taxes`` Required. *Taxes amount of the invoice line*. type: decimal.
 - ``total_due`` Required. *Total amount of the invoice line including taxes*. type: decimal. 
