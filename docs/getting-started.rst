@@ -11,9 +11,11 @@ Create a developer account
 
 First thing you need to do is creating a developer account.
 
-* Go to https://app.postme.io
+* Go to https://api.postme.io
 * Click on "Create a developer account"
-* Activate your email adress
+* Activate your email address
+
+A developer account is necessary if you want to send invoices into Postchain over the Postme API with your own invoicing system.
 
 Register your application
 ~~~~~~~~~~~~~~~~~~~~~~~~~
