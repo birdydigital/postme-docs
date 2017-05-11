@@ -48,6 +48,15 @@ Once your application is created, you can generate App ID/key pairs to get API a
 * If you want to use these credentials for test purpose, check "Sandbox Mode"
 
 
+Use your account as an editor
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Necessary to send invoices from your customers.
+
+
+(In progress)
+
+
 Using Postme API
 ----------------
 
