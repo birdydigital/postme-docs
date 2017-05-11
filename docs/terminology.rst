@@ -3,7 +3,7 @@
 Terminology
 ===========
 
-There is some specialized terminology associated with Postme. To get started, you should at least know what we mean by a Postchain editor node, chartered node, cluster and consortium.
+There is some specialized terminology associated with Postme. To get started, you should at least know what we mean by a Postchain editor node, chartered node, organization node, peer node, cluster and consortium.
 
 
 Editor Node

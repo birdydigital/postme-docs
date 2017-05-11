@@ -6,19 +6,31 @@ Getting started
 Prerequisites
 -------------
 
-Create a developer account
-~~~~~~~~~~~~~~~~~~~~~~~~~~
+Create an account on postme.io
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-First thing you need to do is creating a developer account.
+First thing you need to do is creating an account on postme.io.
 
 * Go to https://api.postme.io
-* Click on "Create a developer account"
+* Click on "Create an account"
 * Activate your email address
 
-A developer account is necessary if you want to send invoices into Postchain over the Postme API with your own invoicing system.
+An enterprise account is necessary to create a new application.
 
-Register your application
-~~~~~~~~~~~~~~~~~~~~~~~~~
+* Go to https://api.postme.io/bo/company
+* Fill the form with your company information
+* Save
+
+As you are the first user to have created this enterprise account. You are the default contact for this company.
+
+
+
+Create a new application
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+The application will be linked with your company, allowing you to send your company's invoices.
+
+If you want to send your invoices into Postchain over the Postme API with your own invoicing system.
 
 * From the dashboard, go to "My apps"
 * Click on "New App"
