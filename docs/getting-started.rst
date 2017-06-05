@@ -15,6 +15,15 @@ First thing you need to do is creating an account on postme.io.
 * Click on "Create an account"
 * Activate your email address
 
+Then create or import your public and private keypair to do any action on Postchain
+Keypairs on postme are generated using the EDCSA 58bits ... algorithm.. see Cryptography.
+
+In your account section you will find a keypair generator to create new keypair.
+
+
+Entreprise account activation
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
 An enterprise account is necessary to create a new application.
 
 * Go to https://api.postme.io/bo/company
@@ -22,7 +31,7 @@ An enterprise account is necessary to create a new application.
 * Save
 
 As you are the first user to have created this enterprise account. You are the default contact for this company.
-
+Then we create a CCO contract that is timestamped in Postchain. The checkbox indicating that the user is a corporate officer must be validated.
 
 
 Create a new application
@@ -37,11 +46,8 @@ If you want to send your invoices into Postchain over the Postme API with your o
 * Enter a title for your app (i.e. "My invoicing system")
 * Save
 
-
-Generate your application credentials
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
 Once your application is created, you can generate App ID/key pairs to get API access.
+Then we create a CBS contract that is timestamped in Postchain. The checkbox indicating that the application is represented by the company.
 
 * Click on "Generate New Key"
 * Enter a name for the new generated key (i.e. "Test")
